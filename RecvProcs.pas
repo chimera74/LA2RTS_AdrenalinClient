@@ -185,9 +185,9 @@ begin
 	ctrl := ReadBoolFromBuf();
 	
 	if Engine.Attack(0, ctrl) then
-		LogDebug('ProcessUseActionCommand', 'Used skill ' + ID.tostring())
+		LogDebug('ProcessUseActionCommand', 'Used action ' + ID.tostring())
 	else
-		LogError('ProcessUseSkillCommand', 'Failed to use skill ' + ID.tostring());
+		LogError('ProcessUseActionCommand', 'Failed to use action ' + ID.tostring());
 end;
 
 procedure ProcessUseSkillCommand;
@@ -198,9 +198,9 @@ begin
 	ctrl := ReadBoolFromBuf();
 	
 	if Engine.UseSkill(ID, ctrl) then
-		LogDebug('ProcessUseSkillCommand', 'Used action ' + ID.tostring())
+		LogDebug('ProcessUseSkillCommand', 'Used skill ' + ID.tostring())
 	else
-		LogError('ProcessUseActionCommand', 'Failed to use action ' + ID.tostring());
+		LogError('ProcessUseSkillCommand', 'Failed to use skill ' + ID.tostring());
 end;
 
 procedure ReadMessage();
