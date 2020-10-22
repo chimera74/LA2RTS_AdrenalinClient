@@ -197,20 +197,20 @@ begin
 	ID := ReadIntFromBuf();
 	ctrl := ReadBoolFromBuf();
 	
-	if Engine.DUseSkill(ID, ctrl) then
+	if Engine.DUseSkill(ID, ctrl, false) then
 		LogDebug('ProcessUseSkillCommand', 'Used skill ' + ID.tostring())
 	else
 		LogError('ProcessUseSkillCommand', 'Failed to use skill ' + ID.tostring());
 end;
 
 procedure ProcessBotEnableCommand;
+var enable : Boolean;
 begin
-	Case RecvBuff[1] of
-	0: Engine.FaceControl(0, false);
-	1: Engine.FaceControl(0, true);
-	else
-		LogError('ProcessBotEnableCommand', 'Wrong parameter');
-	end;
+	enable := ReadBoolFromBuf();
+	if enable then
+		Engine.FaceControl(0, true)
+	else 
+		Engine.FaceControl(0, false);
 	LogDebug('ProcessBotEnableCommand', 'Recieved BotEnable ' + IsQuickPlayerInfoSendingEnabled.tostring + ' packet');
 end;
 

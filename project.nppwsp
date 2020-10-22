@@ -1,0 +1,11 @@
+<NotepadPlus>
+    <Project name="al_tcp_client">
+        <File name="copy_to_al.bat" />
+        <File name="EventProcs.pas" />
+        <File name="PacketIDs.pas" />
+        <File name="RecvProcs.pas" />
+        <File name="SendProcs.pas" />
+        <File name="tcp.pas" />
+        <File name="Vars.pas" />
+    </Project>
+</NotepadPlus>
