@@ -2,8 +2,6 @@ uses SysUtils,TCP;
   
 {$I Vars.pas}
 
-//test 
-
 label
   start_connection;
 
